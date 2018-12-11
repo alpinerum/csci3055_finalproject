@@ -161,3 +161,11 @@ By default, all entities will have an internal access level if its access level 
 Swift supports modular development where Swift can organize code into modules. Each module has a namespace and access controls that are enforced, which determines which part of its code can be used outside its modules and source files. A Swift program may import other modules as *dependencies*, but most dependecies requires code to be downloaded and built in order to be used. Swift comes with a tool called *The Package Manager* which manages the distribution of Swift code by automating the process of downloading, compiling and linking of dependencies.
 
 A package consists of a manifest file and Swift source file(s). The manifest file named `Package.swift` specifies the package's name and its contents using the `PackageDescription` module.
+
+## Compilation and Runtime Tools
+
+The Swift compiler is responsible for translating Swift code into executable machine code. The swift compiler front end also has tools that support IDE integration such as syntax colouring, code completion, etc. Here are some of the major components of the Swift Compiler
+
+*The parser* implemented in lib/Parse, is a recursive-descent parser with an integrated, hand-coded lexer (which does lexical analysis of the code). It generates an AST (Abstract Syntax Tree) without any semantic or type information and will produce errors and warnings for grammatical and syntax problems with the input source.
+
+*Semantic analysis* implemented in lib/Sema, takes the parsed AST and transforms it into a fully type checked form of the AST and will generate warnings and/or errors for any semantic problems in the source code. Type inference is included in semantic analysis and will indicate that it is safe to generate code from the resulting AST on success.
