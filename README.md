@@ -166,6 +166,16 @@ A package consists of a manifest file and Swift source file(s). The manifest fil
 
 The Swift compiler is responsible for translating Swift code into executable machine code. The swift compiler front end also has tools that support IDE integration such as syntax colouring, code completion, etc. Here are some of the major components of the Swift Compiler
 
-*The parser* implemented in lib/Parse, is a recursive-descent parser with an integrated, hand-coded lexer (which does lexical analysis of the code). It generates an AST (Abstract Syntax Tree) without any semantic or type information and will produce errors and warnings for grammatical and syntax problems with the input source.
+*The parser* implemented in `lib/Parse`, is a recursive-descent parser with an integrated, hand-coded lexer (which does lexical analysis of the code). It generates an AST (Abstract Syntax Tree) without any semantic or type information and will produce errors and warnings for grammatical and syntax problems with the input source.
 
-*Semantic analysis* implemented in lib/Sema, takes the parsed AST from *the parser* and transforms it into a fully type checked form of the AST and will generate warnings and/or errors for any semantic problems in the source code. Type inference is included in semantic analysis and will indicate that it is safe to generate code from the resulting AST on success.
+*Semantic analysis* implemented in `lib/Sema`, takes the parsed AST from *the parser* and transforms it into a fully type checked form of the AST and will generate warnings and/or errors for any semantic problems in the source code. Type inference is included in semantic analysis and will indicate that it is safe to generate code from the resulting AST on success.
+
+*The Clang importer* implemented in `lib/ClangImporter`, imports Clang modules and maps C and/or Objective-C APIs into their corresponding Swift APIs.
+
+*SIL generation* implemented in `lib/SILGen` lowers the type-checked AST into "raw" Swift Intermediate Language (SIL). SIL is a high-level, Swift-specific intermediate language that can be used for further analysis and optimization of Swift code.
+
+*SIL Optimizations* implemented in `lib/Analysis`, `lib/ARC`, `lib/LoopTransforms`, and `lib/Transforms`, performs additional high-level Swift-specific optimizations to the Swift program. Optimizations could include for example devirtualization and generic specialization.
+
+*LLVM IR Generation* implemented in `lib/IRGen`, lowers SIL into LLVM IR, at which point LLVM is used to further optimize it and generate machine code.
+
+Swift supports runtime (implemented in `stdlib/public/runtime`) which is implemented between the compiler and the core standard library. It is responsible for the implementation of many dynamic features of the language such as casting, type metadata (to support generics and reflection) and memory management (for object allocation, reference counting, etc.). Unlike Swift libraries, runtime is written mostly in C++ or Objective-C.
