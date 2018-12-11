@@ -168,4 +168,4 @@ The Swift compiler is responsible for translating Swift code into executable mac
 
 *The parser* implemented in lib/Parse, is a recursive-descent parser with an integrated, hand-coded lexer (which does lexical analysis of the code). It generates an AST (Abstract Syntax Tree) without any semantic or type information and will produce errors and warnings for grammatical and syntax problems with the input source.
 
-*Semantic analysis* implemented in lib/Sema, takes the parsed AST and transforms it into a fully type checked form of the AST and will generate warnings and/or errors for any semantic problems in the source code. Type inference is included in semantic analysis and will indicate that it is safe to generate code from the resulting AST on success.
+*Semantic analysis* implemented in lib/Sema, takes the parsed AST from *the parser* and transforms it into a fully type checked form of the AST and will generate warnings and/or errors for any semantic problems in the source code. Type inference is included in semantic analysis and will indicate that it is safe to generate code from the resulting AST on success.
