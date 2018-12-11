@@ -142,3 +142,22 @@ Value of i is 5
 Swift does not support implicit type conversion so variables and constants have to be converted to the right type explicity `i = 1; Double(i)`. For string interpolation we would use `\()` to insert variable values into string literals.
 
 Another interesting fact of Swift's syntax is its use of ranges. The most common forms of ranges are *Closed Ranges* and *Half Open Ranges*. Closed ranges use the `a...b` operator where it will create a Swift range that includes both element *a* and element *b*. A variable of type `ClosedRange` allows access of elements within its range from a collection, but is not iterable because it is not part of the *Sequence Protocol* in Swift. As shown in the example above, a range variable of type `CountableClosedRange` is declared that is similar to `ClosedRange`, but allows iteration.  Half-Open ranges use the `a..<b` operator which creates a range from element *a* up to but not including element*b*. Half-open ranges can be declared as `Range` or as `CountableRange`. Like closed ranges, `Range` is not iterable, but `CountableRange` is iterable.
+
+## Modules and Packages
+
+Swift is used by thousands of companies, ranging from one-man teams to multinational corporations for app development on Apple devices. So it is very important that a programming language be modular to allow large teams to work on the app at the same time.
+
+Swift provides five different access levels within your code:
+*Open Access* and *public access* allows entities to be used within any source file from their module, and any source file from another module that imports their module.
+
+*Internal Access* allows entities to be used within any source file from their module, but cannot be used by any source file outside their module.
+
+*File-private Access* allows entities to be used within its own defining source files only
+
+*Private access* restricts entities to be used in the enclosing declaration and to extensions of that declaration within the same source file
+
+By default, all entities will have an internal access level if its access level is not explicitly specified.
+
+Swift supports modular development where Swift can organize code into modules. Each module has a namespace and access controls that are enforced, which determines which part of its code can be used outside its modules and source files. A Swift program may import other modules as *dependencies*, but most dependecies requires code to be downloaded and built in order to be used. Swift comes with a tool called *The Package Manager* which manages the distribution of Swift code by automating the process of downloading, compiling and linking of dependencies.
+
+A package consists of a manifest file and Swift source file(s). The manifest file named `Package.swift` specifies the package's name and its contents using the `PackageDescription` module.
