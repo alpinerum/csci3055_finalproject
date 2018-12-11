@@ -1,10 +1,12 @@
 "# csci3055_finalproject" 
+Alvin Lum
+alvin.lum@uoit.net
 
 # Swift
 
-## Introduction
+## About the language
 
-  Swift is a programming language developed by Apple Inc for iOS, macOS, watchOS, tvOS, Linux and z/OS. Swift is also open-source with its source code divided into multiple open source repositories hosted on Github.
+  Swift is a programming language developed by Apple Inc for iOS, macOS, watchOS, tvOS, Linux and z/OS. Swift is also open-source with its source code divided into multiple open source repositories hosted on Github. The development of Swift can be found at http://swift.org. Previously, Apple used Objective-C to develop their apps for their numerous devices and was integrated into their ecosystem until Swift reached version 1.0 in September 2014. Development of Swift started in 2010 by Chris Lattner and he drew ideas from Objective-C, Rust, Haskell, Ruby, Pytho, C#, CLU, etc. when developing the Swift programming language.
 
 ## Syntax
 
@@ -12,7 +14,7 @@
   `print("hello world")`
   Like Python3 and Java, functions require braces `()` to accept parameters, in this case the string "hello world" was passed as a parameter into the print function. Swift uses similar syntax to its predecessor Objective-C. Unlike Java, it is optional to add semicolons after each statement in your code in Swift, but if you put use multiple statements in one line, a semicolon will be required to separate each statement `var HelloWorld = "Hello World!" ; print(HelloWorld)`. What is interesting about Swift is that unlike Python and Java, there must be an equal number of whitespace before and after an operator. For example, `print(1+2)` and `print(1 + 2)` are valid statements but `print(1 +2)` is not valid.
   
-  When declaring variables, there are a couple ways to do it. One way is `var Variable: Double = 0.0` and another way is `var Variable = 0.0`. The reason why the second way is valid is because the Swift compiler has a feature called *type inference* where it can *infer* what type of variable it is based on the value you assign it. Another way of declaring a variable is `let Variable = 0.0`, but the variable declared will be immutable or constant and wouldn't be desired if it needs to be changed later on. An interesting fact is that with Swift, almost any character can be used for constant and variable names, including unicode characters.
+  When declaring variables, there are a couple ways to do it. One way is `var Variable: Double = 0.0` and another way is `var Variable = 0.0`. The reason why the second way is valid is because the Swift compiler has a feature called *type inference* where it can *infer* what type of variable it is based on the value you assign it. Another way of declaring a variable is `let Variable = 0.0`, but the variable declared will be immutable or constant and wouldn't be desired if it needs to be changed later on. Here's an interesting fact about Swift, almost any character can be used for constant and variable names, including unicode characters.
 ```
 let 🚽 = "toilet"
 var 🔥💦 = "firewater"
