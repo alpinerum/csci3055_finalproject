@@ -148,6 +148,7 @@ Another interesting fact of Swift's syntax is its use of ranges. The most common
 Swift is used by thousands of companies, ranging from one-man teams to multinational corporations for app development on Apple devices. So it is very important that a programming language be modular to allow large teams to work on the app at the same time.
 
 Swift provides five different access levels within your code:
+
 *Open Access* and *public access* allows entities to be used within any source file from their module, and any source file from another module that imports their module.
 
 *Internal Access* allows entities to be used within any source file from their module, but cannot be used by any source file outside their module.
@@ -179,3 +180,30 @@ The Swift compiler is responsible for translating Swift code into executable mac
 *LLVM IR Generation* implemented in `lib/IRGen`, lowers SIL into LLVM IR, at which point LLVM is used to further optimize it and generate machine code.
 
 Swift supports runtime (implemented in `stdlib/public/runtime`) which is implemented between the compiler and the core standard library. It is responsible for the implementation of many dynamic features of the language such as casting, type metadata (to support generics and reflection) and memory management (for object allocation, reference counting, etc.). Unlike Swift libraries, runtime is written mostly in C++ or Objective-C.
+
+## Standard Libraries
+
+The Swift standard library provides a base layer of functionality for writing Swift programs and includes (but are not limited to) the following:
+
+Fundamental data types such as `Int`, `Double`, `String`
+
+Data structures such as `Array`, `Dictionary` and `Set`
+
+Global functions such as `sizeof<T>(_: T.Type)`, `max<T : Comparable>(_: T, _: T)` and `print(_:separator:terminator:)`
+
+Protocols such as *Collection* (A sequence of elements whose elements can be traversed and iterated multiple times nondestructively) and *Equatable* (A type that can be used for value comparisons) that describe common abstractions.
+
+Swift has numerous higher order functions that operate on other functions by either taking a function as an argument/parameter or returning a function. For example, Swift's Array type contains a few higher order functions: sorted, map, filter and reduce. These functions use closures that can determine how we want the function to sort, map, filter or reduce an array of elements.
+
+Here's an example of a sorted function
+```
+var nums = [5,2,3,1,8,0]
+print(nums)
+print(nums.sorted())
+```
+
+And when executed it will print:
+```
+[5, 2, 3, 1, 8, 0]
+[0, 1, 2, 3, 5, 8]
+```
