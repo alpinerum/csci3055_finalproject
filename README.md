@@ -54,7 +54,8 @@ Which will print out
 This number is 10
 ```
 Brackets are optional in if statements. If statements in Swift are very similar to Java with one difference being that brackets are required around expressions in if statements in java while in Swift it is optional.
-Here's the syntax of a while loop:
+
+In Swift, there are a couple ways of using loops. Here's the syntax of a while loop:
 ```
 while condition {
   statement(s)
@@ -81,4 +82,43 @@ i is 6
 i is 7
 i is 8
 i is 9
+```
+Like the if statement, brackets are optional for while loops, but otherwise remain syntactically similar to Java.
+The syntax of for-in loops in Swift is similar to for loops in Python. The only difference is that unlike Python, opening and closing brackets are required in for-in loops in Swift.
+```
+for index in variable {
+  statement(s)
+}
+```
+
+An example of a for-in loop in Swift:
+```
+var intList = [10,11,12,13,14]
+for i in intList {
+  print("Value of index is \(i)")
+}
+```
+Resulting output:
+```
+Value of index is 10
+Value of index is 11
+Value of index is 12
+Value of index is 13
+Value of index is 14
+```
+
+Another example of for-in loop in Swift:
+```
+let range: CountableClosedRange = 1...5
+for i in range {
+  print("Value of i is \(i)")
+}
+```
+Resulting output:
+```
+Value of i is 1
+Value of i is 2
+Value of i is 3
+Value of i is 4
+Value of i is 5
 ```
