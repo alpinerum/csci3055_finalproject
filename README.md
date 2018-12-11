@@ -12,6 +12,23 @@
   `print("hello world")`
   Like Python3 and Java, functions require braces `()` to accept parameters, in this case the string "hello world" was passed as a parameter into the print function. Swift uses similar syntax to its predecessor Objective-C. Unlike Java, it is optional to add semicolons after each statement in your code in Swift, but if you put use multiple statements in one line, a semicolon will be required to separate each statement `var HelloWorld = "Hello World!" ; print(HelloWorld)`. What is interesting about Swift is that unlike Python and Java, there must be an equal number of whitespace before and after an operator. For example, `print(1+2)` and `print(1 + 2)` are valid statements but `print(1 +2)` is not valid.
   
+  When declaring variables, there are a couple ways to do it. One way is `var Variable: Double = 0.0` and another way is `var Variable = 0.0`. The reason why the second way is valid is because the Swift compiler has a feature called *type inference* where it can *infer* what type of variable it is based on the value you assign it. Another way of declaring a variable is `let Variable = 0.0`, but the variable declared will be immutable or constant and wouldn't be desired if it needs to be changed later on. An interesting fact is that with Swift, almost any character can be used for constant and variable names, including unicode characters.
+```
+let 🚽 = "toilet"
+var 🔥💦 = "firewater"
+print("\(🚽)")
+print("\(🔥💦)")
+```
+ 
+When executed will print
+```
+toilet
+firewater
+```
+
+This can be useful if there are developers that speak a non english language and their language can be typed out in unicode
+`let 你好 = "你好世界"`
+  
 Here's the syntax of an if-statement:
 ```
 if (expression) {
