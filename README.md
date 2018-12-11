@@ -10,4 +10,4 @@
 
   Let's start with a simple print statement, in Swift to print is pretty simple 
   `print("hello world")`
-  Like Python3 and Java, functions require braces `()` to accept parameters, in this case the string "hello world" was passed as a parameter into the print function.
+  Like Python3 and Java, functions require braces `()` to accept parameters, in this case the string "hello world" was passed as a parameter into the print function. Swift uses similar syntax to its predecessor Objective-C. Unlike Java, it is optional to add semicolons after each statement in your code in Swift, but if you put use multiple statements in one line, a semicolon will be required to separate each statement `var HelloWorld = "Hello World!" ; print(HelloWorld)`.
