@@ -267,3 +267,19 @@ In 2015, Apple made Swift open source, allowing the open source community to sta
 ## Specialized libraries
 
 Since Swift is used in a variety of devices such as TV, iPhones, Apple Watches, etc. there are a number of speccialized libraries that are exclusively used by certain types of devices. For example, for iOS, we would import the UIKit library for use on the iOS touchscreen.
+
+# Analysis of the Language
+
+Swift supports both functional programming and procedural programming. Procedural programming is only supported because of Swift's compatibility with C and Objective-C.
+
+Swift by itself does not support metaprogramming, but thanks to the open source community there are libraries that allow metaprogramming. One such a library is *Sourcery* developed by Krzysztof Zabłocki that allows metaprogramming in Swift.
+
+Swift supports the use of closure within its code and are similar to blocks used in C and Objective-C. Closure expressions are used to write inline closures using simple, focused syntax. One such closure expression as shown earlier in the report:
+```
+var nums = [5,2,3,1,8,0]
+print(nums)
+print(nums.sorted())
+print(nums.sorted(by: >))
+```
+
+Where the closure expression use the `sorted(by: >)` function to sort an array of ints in descending order. The `sorted(by: >)` function accepts a closure that takes two arguments which are of the same type as the elements in the array. It will return a `Bool` value on whether the preceding element should appear before or after the second element. The sorting closure needs to return `true` if the preceding element should be before the second element, otherwise it returns false. In the example above, the preceding element must be larger than the second element for the closure to return `true`.
