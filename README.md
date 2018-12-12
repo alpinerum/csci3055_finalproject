@@ -197,15 +197,65 @@ Protocols such as *Collection* (A sequence of elements whose elements can be tra
 
 Swift has numerous higher order functions that operate on other functions by either taking a function as an argument/parameter or returning a function. For example, Swift's Array type contains a few higher order functions: sorted, map, filter and reduce. These functions use closures that can determine how we want the function to sort, map, filter or reduce an array of elements.
 
-Here's an example of a sorted function
+Here's are examples of sorted functions, one of which has a sorted(by: >) function to sort in descending order
 ```
 var nums = [5,2,3,1,8,0]
 print(nums)
 print(nums.sorted())
+print(nums.sorted(by: >))
 ```
 
 And when executed it will print:
 ```
 [5, 2, 3, 1, 8, 0]
 [0, 1, 2, 3, 5, 8]
+[8, 5, 3, 2, 1, 0]
+```
+
+Here's an example of a map function
+```
+var nums = [0,1,2,3,4]
+var numStrings = nums.map {(a) -> String in return String(a)}
+print (numStrings)
+```
+
+When executed it will print:
+```
+["0", "1", "2", "3", "4"]
+```
+
+But can also be written with inline syntax with closures:
+```
+var nums = [0,1,2,3,4]
+var numStrings = nums.map {String($0)}
+print (numStrings)
+```
+
+Which is much simpler and prints out the same result:
+```
+["0", "1", "2", "3", "4"]
+```
+
+An example of the filter function using inline syntax:
+```
+var nums = [0,1,2,3,4]
+var lessThanTwo = nums.filter{$0 < 3}
+print (lessThanTwo)
+```
+
+When executed will print out:
+```
+[0, 1, 2]
+```
+
+An example of a reduce function using inline syntax that turns all elements in an array into one long string:
+```
+var nums = [0,1,2,3,4,7,6]
+var allNums = nums.reduce("") {$0 + String($1)}
+print (allNums)
+```
+
+When executed will print out:
+```
+0123476
 ```
