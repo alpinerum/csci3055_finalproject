@@ -6,7 +6,7 @@ alvin.lum@uoit.net
 
 ## About the language
 
-  Swift is a programming language developed by Apple Inc for iOS, macOS, watchOS, tvOS, Linux and z/OS. Swift is also open-source with its source code divided into multiple open source repositories hosted on Github. The development of Swift can be found at http://swift.org. Previously, Apple used Objective-C to develop their apps for their numerous devices and was integrated into their ecosystem until Swift reached version 1.0 in September 2014. Development of Swift started in 2010 by Chris Lattner and he drew ideas from Objective-C, Rust, Haskell, Ruby, Pytho, C#, CLU, etc. when developing the Swift programming language.
+  Swift is a programming language developed by Apple Inc for iOS, macOS, watchOS, tvOS, Linux and z/OS. Swift is also open-source with its source code divided into multiple open source repositories hosted on Github. The development of Swift can be found at http://swift.org. Previously, Apple used Objective-C to develop their apps for their numerous devices and was integrated into their ecosystem until Swift reached version 1.0 in September 2014. Development of Swift started in 2010 by Chris Lattner and he drew ideas from Objective-C, Rust, Haskell, Ruby, Pytho, C#, CLU, etc. when developing the Swift programming language. In December 2015, Apple made Swift open source, allowing the open source community to contribute code and libraries towards the ongoing development of Swift.
 
 ## Syntax
 
@@ -259,3 +259,11 @@ When executed will print out:
 ```
 0123476
 ```
+
+## Open source libraries
+
+In 2015, Apple made Swift open source, allowing the open source community to start developing new libraries with Swift for Apple devices. Since then hundreds of open source libraries and code have been contributed by countless developers towards the ongoing development of Swift. One such library is the IINA video player for macOS located in https://github.com/lhc70000/iina. The video player is based on an existing video player library *mpv* which is located in https://github.com/mpv-player/mpv. It has features that include subtitle support, customizable user interface, touchbar support, a standalone music mode for audio files, customizable keyboard, mouse and trackpad gesture control, etc.
+
+## Specialized libraries
+
+Since Swift is used in a variety of devices such as TV, iPhones, Apple Watches, etc. there are a number of speccialized libraries that are exclusively used by certain types of devices. For example, for iOS, we would import the UIKit library for use on the iOS touchscreen.
