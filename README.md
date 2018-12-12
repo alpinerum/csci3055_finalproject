@@ -1,5 +1,7 @@
 "# csci3055_finalproject" 
+
 Alvin Lum
+
 alvin.lum@uoit.net
 
 # Swift
@@ -283,3 +285,40 @@ print(nums.sorted(by: >))
 ```
 
 Where the closure expression use the `sorted(by: >)` function to sort an array of ints in descending order. The `sorted(by: >)` function accepts a closure that takes two arguments which are of the same type as the elements in the array. It will return a `Bool` value on whether the preceding element should appear before or after the second element. The sorting closure needs to return `true` if the preceding element should be before the second element, otherwise it returns false. In the example above, the preceding element must be larger than the second element for the closure to return `true`.
+
+Swift supports lexical scoping but does not support dynamic scoping. An example of lexial scoping:
+```
+func foo() -> Int {
+  var a = 5
+
+  func add() -> Int {
+    let b = 2
+    a = a + b
+    return a
+  }
+  add()
+  return a
+}
+print(foo())
+```
+
+When executed will print:
+```
+7
+```
+
+Swift allows functional programming thanks to the `let` construct. Declaring variables with `let` makes said variables immutable which can help when multiple threads access a variable concurrently, modify it or access it out of order. Swift allows functions to be assigned to variables and allows the implementation of partial functions. This means that functions can be encapsulated in another function and part of a function can be passed as a parameter.
+
+Swift is a statically typed language which means the compiler does type checking at compile time instead of run time. So a variable cannot be changed once set to a type. Swift does support *dynamic type* but of a different variety, where it allows fonts to dynamically change to its preferred size.
+
+Pros:
+- Open source - Swift developers have access to a massize open source library for Swift that they can use for their projects. It's massive developer community also allows for an abundance of third party tools
+- Performance - As stated by Apple, Swift is up to 2.6x faster than Objective-C and 8.4x faster than Python 2.7
+- Safe - Swift provides safeguards to prevent errors and improve readability. Its syntax also ensures that you write clean and consistent code.
+- Popular - Swift is currently the 14th most popular language, surpassing Go, Ruby, Perl, etc.
+
+Cons:
+- Relatively new, Swift wasn't released until September 2014 and wasn't open source until December 2015 and the language is not well established. It's limited number of native libraries and tools doesn't help it either.
+- Lack of support for earlier iOS versions - Swift can only be used in apps that support iOS 7 or later. This means that legacy projects running on older versions of iOS can't use Swift.
+- Constantly changing - If developers want to move to the latest Swift Version, they may end up having to rewrite their entire projects which can take a long period of tiem. A key problem that developers have with Swift is the lack of backwards compatibility with older Swift versions.
+- Doesn't work well with third party tools and IDEs - Due to frequent updates and lack of backwards compatibility, it will be hard to find the right tools and IDEs for certain tasks. Even though Apple has an official IDE, XCode, it still is behind in terms of tooling and support for Swift with developers reporting issues with compilers, autocomplete, etc.
